@@ -15,9 +15,3 @@ Project Setup :
     Minimum 2GB RAM per VM
     Network connectivity between VMs
 
-
-Project Structure
-├── server.py             # Central server logic
-├── client.py             # Client node implementation
-├── utils.py              # Data loading and utilities
-├── main.py               # Orchestration script
