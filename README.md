@@ -13,7 +13,7 @@ FL-Server: Coordinates training rounds and aggregates model updates
 
 FL-Client1 & FL-Client2: Local training nodes with private datasets
 
-System Requirements
+System Requirements:
   Ubuntu 20.04/22.04
   Python 3.8+
   Minimum 2GB RAM per VM
