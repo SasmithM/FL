@@ -1,21 +1,37 @@
-Federated Learning System
+# Federated Learning with Robust Aggregation
 
-Overview
-This project implements a Federated Learning (FL) system, a distributed machine learning approach that enables multiple clients to collaboratively train a shared model while keeping their data localized. Unlike traditional centralized machine learning, federated learning preserves data privacy by allowing devices or clients to train models on their own data without sharing the raw data with a central server.
+This project implements a basic Federated Learning (FL) simulation using socket programming and PyTorch.
+It includes a defense mechanism using Trimmed Mean Aggregation to counter model poisoning attacks.
 
-In this implementation, a server coordinates training across multiple clients, aggregating model updates while maintaining data privacy. This approach is particularly valuable for applications requiring data privacy, such as healthcare, finance, and mobile device analytics.
+## Files
 
-Project Setup :
+- `model.py`: Defines the neural network architecture.
+- `train_eval.py`: Contains functions for training and evaluation.
+- `server.py`: Runs the FL server which coordinates training and aggregates models.
+- `client.py`: Runs an FL client that trains on local data and communicates with the server.
+- `README.md`: This file.
 
-Architecture
+## Requirements
 
-FL-Server: Coordinates training rounds and aggregates model updates
+- Python 3.8+
+- PyTorch
+- tqdm
+- NumPy
 
-FL-Client1 & FL-Client2: Local training nodes with private datasets
+## Running the Simulation
 
-System Requirements:
-  Ubuntu 20.04/22.04
-  Python 3.8+
-  Minimum 2GB RAM per VM
-  Bridged Network b/w VMs
+1. Start the server:
+   ```bash
+   python server.py
+   ```
 
+2. Start clients (in separate terminals or VMs):
+   ```bash
+   python client.py
+   ```
+
+## Notes
+
+- Non-IID MNIST is used for training across clients.
+- Clients communicate using sockets over specified ports.
+- Aggregation strategy can be changed in `server.py`.
